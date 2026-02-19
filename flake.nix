@@ -281,12 +281,7 @@
         };
 
         # Extract version from mix.exs
-        version = let
-          content = builtins.readFile ./mix.exs;
-          # Replace newlines with spaces to enable single-line regex matching
-          singleLine = builtins.replaceStrings ["\n"] [" "] content;
-          matched = builtins.match ''.*version: "([^"]+)".*'' singleLine;
-        in builtins.head matched;
+        version = "0.0.0-dev";
 
       in
       {
