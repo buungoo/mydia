@@ -364,9 +364,6 @@
             mix do compile --no-deps-check, assets.deploy
           '';
 
-          # Set environment for production
-          MIX_ENV = "prod";
-
           # Post-install: wrap the release binary to include runtime deps
           postInstall = ''
             wrapProgram $out/bin/mydia \
